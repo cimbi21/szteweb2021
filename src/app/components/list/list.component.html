@@ -1,0 +1,17 @@
+ <div class="col-md-12">
+    <mat-card style="margin: 3vh;text-align: center; float: left; width: 250px" *ngFor="let p of payments;" >
+      <mat-card-content>
+        <h4>Azonosító: <br>{{ p.id }}</h4>
+        <h4>Státusz: {{ p.status }}</h4>
+        <h4>Fizetési mód: {{ p.paymentMethod }}</h4>
+        <h4>Összeg: {{ p.totalAmount }}</h4>
+        <h4>Leírás: {{ p.description }}</h4>
+
+      </mat-card-content>
+      <button style="background-color: aqua" mat-raised-button (click)="update(p)">Módosít</button>
+      <br>
+      <br>
+      <app-delete [payment]="p"></app-delete>
+    </mat-card>
+  </div>
+

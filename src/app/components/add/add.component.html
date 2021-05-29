@@ -1,0 +1,46 @@
+<div class="submit-form" id="center">
+  <br>
+  <div *ngIf="!kuldes">
+    <mat-card class="form-group">
+      <form>
+      <mat-card-title>Új hozzáadása</mat-card-title>
+      <mat-form-field class="full">
+        <mat-label>Státusz</mat-label>
+        <mat-select  [(ngModel)]="p.status" name="status">
+          <mat-option *ngFor="let st of status" [value]="st.value">
+            {{st.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="full">
+      <mat-label>Összeg</mat-label>
+      <input matInput type="text" [(ngModel)]="p.totalAmount" name="totalAmount" />
+      </mat-form-field>
+        <mat-form-field class="full">
+        <mat-label>Fizetési mód</mat-label>
+        <mat-select  [(ngModel)]="p.paymentMethod" name="paymentMethod">
+          <mat-option *ngFor="let st of fizetesiMod" [value]="st.value">
+            {{st.viewValue}}
+          </mat-option>
+        </mat-select>
+        </mat-form-field>
+      <mat-form-field class="full">
+        <mat-label>Leírás</mat-label>
+      <input matInput type="text" [(ngModel)]="p.description" name="description" />
+      </mat-form-field>
+        <br>
+      <button style="margin-top: 15px; background-color: aqua" mat-raised-button (click)="mentes()">Hozzáad</button>
+      </form>
+    </mat-card>
+  </div>
+
+  <div *ngIf="kuldes">
+    <mat-card class="form-group">
+      <mat-card-title>Sikeres létrehozás!</mat-card-title>
+    <br>
+    <h5>Adj hozzá másikat is!</h5>
+    <button style="margin-top: 15px; background-color: aqua" mat-raised-button routerLink="add">Új</button>
+    </mat-card>
+  </div>
+</div>
+
