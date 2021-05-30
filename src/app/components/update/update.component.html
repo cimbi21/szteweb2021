@@ -1,6 +1,6 @@
 <div id="center">
   <br>
-  <div *ngIf="!kuldes">
+  <div *ngIf="!siker">
     <mat-card class="form-group">
       <form>
         <mat-card-title>Módosítás</mat-card-title>
@@ -34,11 +34,11 @@
     </mat-card>
   </div>
 
-  <div *ngIf="kuldes">
+  <div *ngIf="siker">
     <mat-card class="form-group">
-      <mat-card-title>Sikeres létrehozás!</mat-card-title>
+      <mat-card-title>Sikereses módosítás!</mat-card-title>
       <br>
-      <h5>Adj hozzá másikat is!</h5>
+      <button style="margin-top: 15px; background-color: aqua" mat-raised-button routerLink="/list">Listázás</button>
     </mat-card>
   </div>
 </div>
