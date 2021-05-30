@@ -1,7 +1,6 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import Payment from "../../models/payment.model";
 import {PaymentService} from "../../services/payment.service";
-import {switchMap} from "rxjs/operators";
 import {ActivatedRoute} from "@angular/router";
 
 interface Options {
