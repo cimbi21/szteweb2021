@@ -34,7 +34,7 @@ export class UpdateComponent implements OnInit, OnDestroy{
   paymentMethod: string | null= null;
   description: string | null= null;
   status: string | null= null;
-  p: Payment=new Payment(this.id, this.status, this.description, this.paymentMethod, this.totalAmount);
+  p: Payment=new Payment(this.id, this.status, this.description, this.paymentMethod, parseInt(typeof this.totalAmount === "string" ? this.totalAmount : "0"));
   constructor(private service: PaymentService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -44,7 +44,7 @@ export class UpdateComponent implements OnInit, OnDestroy{
     this.description=this.route.snapshot.paramMap.get('description');
     this.totalAmount=this.route.snapshot.paramMap.get('totalAmount');
     this.paymentMethod=this.route.snapshot.paramMap.get('paymentMethod');
-    this.p=new Payment(this.id, this.status, this.description, this.paymentMethod, this.totalAmount);
+    this.p=new Payment(this.id, this.status, this.description, this.paymentMethod, parseInt(typeof this.totalAmount === "string" ? this.totalAmount : "0"));
   }
   ngOnDestroy(): void {
     this.p=new Payment(null,null,null, null, null);

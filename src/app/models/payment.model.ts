@@ -1,5 +1,5 @@
 export default class Payment{
-  constructor(id: string | null, status: string | null, description: string | null , paymentMethod: string | null , totalAmount: string | null ) {
+  constructor(id: string | null, status: string | null, description: string | null , paymentMethod: string | null , totalAmount: number | null ) {
     this.id=id;
     this.status=status;
     this.paymentMethod=paymentMethod;
@@ -9,7 +9,7 @@ export default class Payment{
 
   id?:string | null;
   status?:string | null;
-  totalAmount?:string | null;
+  totalAmount?:number | null;
   paymentMethod?:string | null;
   description?:string | null;
 

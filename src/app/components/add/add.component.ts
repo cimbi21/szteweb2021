@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import Payment from 'src/app/models/payment.model';
 import {PaymentService} from "../../services/payment.service";
 
@@ -14,7 +14,7 @@ interface Options {
 })
 
 
-export class AddComponent implements OnInit {
+export class AddComponent implements OnInit, OnChanges {
 
 
   status: Options[] = [
@@ -50,5 +50,9 @@ export class AddComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.new();
+  }
+  ngOnChanges(changes: SimpleChanges) {
+    this.new();
   }
 }

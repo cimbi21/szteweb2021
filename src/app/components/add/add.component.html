@@ -14,7 +14,7 @@
       </mat-form-field>
       <mat-form-field class="full">
       <mat-label>Összeg</mat-label>
-      <input matInput type="text" [(ngModel)]="p.totalAmount" name="totalAmount" />
+      <input matInput type="number" [(ngModel)]="p.totalAmount" name="totalAmount" />
       </mat-form-field>
         <mat-form-field class="full">
         <mat-label>Fizetési mód</mat-label>
@@ -26,7 +26,7 @@
         </mat-form-field>
       <mat-form-field class="full">
         <mat-label>Leírás</mat-label>
-      <input matInput type="text" [(ngModel)]="p.description" name="description" />
+      <input matInput type="text"  ngModel maxlength="15" [(ngModel)]="p.description" name="description" />
       </mat-form-field>
         <br>
       <button style="margin-top: 15px; background-color: aqua" mat-raised-button (click)="mentes()">Hozzáad</button>
@@ -39,7 +39,7 @@
       <mat-card-title>Sikeres létrehozás!</mat-card-title>
     <br>
     <h5>Adj hozzá másikat is!</h5>
-    <button style="margin-top: 15px; background-color: aqua" mat-raised-button routerLink="/add">Új</button>
+    <button style="margin-top: 15px; background-color: aqua" mat-raised-button routerLink="/add" (click)="new()">Új</button>
       <br>
       <button style="margin-top: 15px; background-color: aqua" mat-raised-button routerLink="/list">Listázás</button>
     </mat-card>
