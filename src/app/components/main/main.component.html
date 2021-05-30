@@ -1,7 +1,7 @@
 <div>
   <h1>Hello!</h1>
   <br>
-  <mat-card style="margin: auto; text-align: center; width: 300px" >
+  <mat-card style="margin: auto; text-align: center; width: 300px;" >
     <mat-card-title>A legnagyobb tranzakció</mat-card-title>
     <mat-card-content>
       <h4>Azonosító: <br>{{ this.biggest.id }}</h4>
@@ -11,6 +11,18 @@
       <h4>Leírás: {{ this.biggest.description }}</h4>
     </mat-card-content>
   </mat-card>
+  <br>
+  <mat-card style="margin: auto; text-align: center; width: 300px;" >
+    <mat-card-title>A legkisebb tranzakció</mat-card-title>
+    <mat-card-content>
+      <h4>Azonosító: <br>{{ this.smallest.id }}</h4>
+      <h4>Státusz: {{ this.smallest.status }}</h4>
+      <h4>Fizetési mód: {{ this.smallest.paymentMethod }}</h4>
+      <h4>Összeg: {{ this.smallest.totalAmount }}</h4>
+      <h4>Leírás: {{ this.smallest.description }}</h4>
+    </mat-card-content>
+  </mat-card>
+  <br>
 </div>
 
 

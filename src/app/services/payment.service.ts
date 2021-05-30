@@ -47,4 +47,12 @@ export class PaymentService {
       return query;
     }).valueChanges() as Observable<Payment[]>;
   }
+
+  getSmallest(): Observable<Payment[]> {
+    return this.db.collection(this.path, ref => {
+      let query: CollectionReference | Query = ref;
+      query = query.orderBy("totalAmount", "asc").limit(1);
+      return query;
+    }).valueChanges() as Observable<Payment[]>;
+  }
 }

@@ -9,6 +9,8 @@ import {PaymentService} from "../../services/payment.service";
 })
 export class MainComponent implements OnInit, OnChanges {
   b?: Payment[];
+  s?: Payment[];
+  smallest: Payment=new Payment(null, null,null,null, null);
   biggest: Payment = new Payment(null, null,null,null, null);
   constructor(private service: PaymentService) { }
 
@@ -17,11 +19,20 @@ export class MainComponent implements OnInit, OnChanges {
       this.b=val;
       this.biggest=this.b[0];
     });
+    this.service.getSmallest().subscribe(val => {
+      this.s=val;
+      this.smallest=this.s[0];
+    });
+
   }
   ngOnChanges(): void {
     this.service.get().subscribe(val => {
       this.b=val;
       this.biggest=this.b[0];
+    });
+    this.service.getSmallest().subscribe(val => {
+      this.s=val;
+      this.smallest=this.s[0];
     });
   }
 
