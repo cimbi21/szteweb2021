@@ -30,8 +30,8 @@ export class PaymentService {
     return uid;
   }
 
-  async update(collectionName: string, id: string, data: any): Promise<string> {
-    await this.db.collection(collectionName).doc(id).update(data);
+  async update(id: string, data: any): Promise<string> {
+    await this.db.collection(this.path).doc(id).update({...data});
     return id;
   }
 

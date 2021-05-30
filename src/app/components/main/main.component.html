@@ -1,1 +1,16 @@
-<p>main works!</p>
+<div>
+  <h1>Hello!</h1>
+  <br>
+  <mat-card style="margin: auto; text-align: center; width: 300px" >
+    <mat-card-title>A legnagyobb tranzakció</mat-card-title>
+    <mat-card-content>
+      <h4>Azonosító: <br>{{ this.biggest.id }}</h4>
+      <h4>Státusz: {{ this.biggest.status }}</h4>
+      <h4>Fizetési mód: {{ this.biggest.paymentMethod }}</h4>
+      <h4>Összeg: {{ this.biggest.totalAmount }}</h4>
+      <h4>Leírás: {{ this.biggest.description }}</h4>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+

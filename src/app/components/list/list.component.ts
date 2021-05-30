@@ -13,7 +13,6 @@ import {Observable} from "rxjs";
 
 export class ListComponent implements OnInit {
   payments?: Payment[];
-  biggest?: Payment[];
   constructor(private service: PaymentService, private router: Router ) { }
 
   ngOnInit(): void {

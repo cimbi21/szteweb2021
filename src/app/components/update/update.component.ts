@@ -9,9 +9,6 @@ interface Options {
   viewValue: string;
 }
 
-interface ngOnDestroy {
-}
-
 @Component({
   selector: 'app-update',
   templateUrl: './update.component.html',
@@ -54,7 +51,9 @@ export class UpdateComponent implements OnInit, OnDestroy{
     this.p=new Payment(null,null,null, null, null);
   }
   update(): void{
-    this.updating=true;
+    if (this.p.id != null) {
+      this.service.update(this.p.id, this.p).then(r => {console.log(r);});
+    }
   }
 }
 

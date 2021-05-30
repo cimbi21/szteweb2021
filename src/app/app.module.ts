@@ -20,6 +20,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { UpdateComponent } from './components/update/update.component'
 import {DeleteComponent} from "./components/delete/delete.component";
 import { MainComponent } from './components/main/main.component';
+import {MatIconModule} from "@angular/material/icon";
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +45,8 @@ import { MainComponent } from './components/main/main.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     MatOptionModule,
-    MatSelectModule
+    MatSelectModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

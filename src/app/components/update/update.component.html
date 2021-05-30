@@ -1,4 +1,4 @@
-<div class="submit-form" id="center">
+<div id="center">
   <br>
   <div *ngIf="!kuldes">
     <mat-card class="form-group">
@@ -29,6 +29,7 @@
           <input matInput type="text" [(ngModel)]="p.description" name="description" />
         </mat-form-field>
         <br>
+        <button style="background-color: aqua" mat-raised-button (click)="update()">Mentés</button>
       </form>
     </mat-card>
   </div>
